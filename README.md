@@ -1,6 +1,5 @@
 
-<!-- ![logo.png](Git/logo.png) -->
-<img src="Git/logo.png" witdh="100px">
+![logo.png](Git/logo.png)
 # TESTE BTG
 
 Entregas realizadas:
