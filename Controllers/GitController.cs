@@ -22,12 +22,10 @@ namespace Api.Controllers
     [ApiController]
     public class GitController : ControllerBase
     {
-        private readonly MyContext _context;
         private readonly IGitService _service;
 
-        public GitController(MyContext context, IGitService service)
+        public GitController(IGitService service)
         {
-            _context = context;
             _service = service;
         }
 
@@ -66,11 +64,6 @@ namespace Api.Controllers
         [HttpGet("addGitRepository")]
         public async Task<ActionResult<bool>> AddGitRepository()
         {
-            if (_context.GitRepositories == null)
-            {
-                return Problem("Entity set 'MyContext.GitRepositories'  is null.");
-            }
-
             try
             {
                 return await _service.AddGitRepository();
@@ -80,16 +73,6 @@ namespace Api.Controllers
                 Console.WriteLine($"Erro ao buscar repositórios em destaque: {e.Message}");
                 return Problem("Problem to set 'MyContext.ProgrammingLanguage'");
             }
-        }
-
-        private bool GitRepositoryExists(int id)
-        {
-            return (_context.GitRepositories?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
-
-        private bool GitRepositoryOwnerExists(long id)
-        {
-            return (_context.GitRepositoryOwner?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
