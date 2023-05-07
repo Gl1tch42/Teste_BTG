@@ -116,4 +116,4 @@ namespace Api.Service
 
 ## O Banco de dados
 
-O banco de dados escolhido foi o mySQL por ser o primeiro sgbd que já utilizei e por já ter ele no meu computador pessoal
+O banco de dados escolhido foi o mySQL por ser um otimo sgbd que já utilizei e por já ter ele no meu computador pessoal, tendo uma boa facilidade e familiaridade com ele
